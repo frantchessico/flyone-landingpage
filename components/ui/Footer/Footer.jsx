@@ -1,6 +1,5 @@
 import { Instagram } from 'lucide-react';
 
-
 const Footer = () => {
     const currentYear = new Date().getFullYear(); // Obter o ano atual dinamicamente
 
@@ -12,12 +11,25 @@ const Footer = () => {
                         © {currentYear} Flyone. All rights reserved.
                     </p>
                     <div className="flex items-center justify-center gap-x-6 text-gray-500 mt-6 sm:mt-0">
-                        
-                        <a href="https://f1y.li/wrt4suh" target="_blank" aria-label="Visit our social media">
-                        <Instagram />
+                        <a
+                            href="https://f1y.li/wrt4suh"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit our social media"
+                        >
+                            <Instagram />
                         </a>
-                        <a href="https://f1y.li/C3AdM31" target="_blank" aria-label="Visit our social media">
-                            <svg className="w-6 h-6 hover:text-gray-200 duration-150" fill="none" viewBox="0 0 48 48">
+                        <a
+                            href="https://f1y.li/C3AdM31"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit our social media"
+                        >
+                            <svg
+                                className="w-6 h-6 hover:text-gray-200 duration-150"
+                                fill="none"
+                                viewBox="0 0 48 48"
+                            >
                                 <g clipPath="url(#clip0_17_68)">
                                     <path
                                         fill="currentColor"
