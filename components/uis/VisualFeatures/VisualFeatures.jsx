@@ -1,7 +1,7 @@
 import SectionWrapper from "@/components/SectionWrapper";
-import Feature1 from "@/public/images/Feature-1.svg";
-import Feature2 from "@/public/images/Feature-2.svg";
-import Feature3 from "@/public/images/Feature-2.svg";
+import Feature1 from "@/public/images/6.svg";
+import Feature2 from "@/public/images/11.svg";
+import Feature3 from "@/public/images/3.svg";
 import Image from "next/image";
 
 const VisualFeatures = () => {

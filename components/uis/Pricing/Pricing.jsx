@@ -33,7 +33,9 @@ const Pricing = () => {
   if (error) {
     return <div className="text-center text-red-500">Error: {error}</div>
   }
-
+  const handleGetstarted = () => {
+   return window.location.href = 'https://app.f1y.pro/'
+  }
   return (
     <section id="pricing" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
@@ -113,6 +115,8 @@ const Pricing = () => {
                 onMouseUp={(e) =>
                   (e.target.style.backgroundColor = '#57d468')
                 }
+
+                onClick={handleGetstarted}
               >
                 Get Started
               </button>
