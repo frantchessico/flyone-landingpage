@@ -1,65 +1,80 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { ClipboardCopy, ArrowDown, LinkIcon, MoreVertical } from 'lucide-react';
-import { QRCodeModal } from './qr-code-modal';
-import { toast, Toaster } from 'sonner';
-import { z } from 'zod';
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { ClipboardCopy, ArrowDown, LinkIcon, MoreVertical, ChevronDown } from 'lucide-react'
+import { QRCodeModal } from './qr-code-modal'
+import { toast, Toaster } from 'sonner'
+import { z } from 'zod'
+import { generateImprovedLinkRandomKey } from '@/lib/utils'
+import { pubSub } from '@/lib/pubsub'
 
 // URL validation schema
-const urlSchema = z.string().url();
+const urlSchema = z.string().url()
+
+// Number of links to show initially
+const INITIAL_LINKS_COUNT = 3
 
 export default function UrlShortener() {
-  // Initialize state after component mounts to avoid hydration mismatch
-  const [mounted, setMounted] = useState(false);
-  const [links, setLinks] = useState([]);
-  const [inputUrl, setInputUrl] = useState('');
+  const [mounted, setMounted] = useState(false)
+  const [links, setLinks] = useState([])
+  const [inputUrl, setInputUrl] = useState('')
+  const [showAllLinks, setShowAllLinks] = useState(false)
 
-  // Set initial data after mount to avoid hydration issues
   useEffect(() => {
     setLinks([
       { shortUrl: 'f1y.li/flyone', longUrl: 'https://app.f1y.pro', clicks: 58800 },
-    ]);
-    setMounted(true);
-  }, []);
+    ])
+    setMounted(true)
+  }, [])
 
   const handleShorten = () => {
     try {
-      // Validate URL
-      urlSchema.parse(inputUrl);
-
+      urlSchema.parse(inputUrl)
+      
+      const linkId = generateImprovedLinkRandomKey(7)
       const newLink = {
-        shortUrl: `fly.one/${Math.random().toString(36).substr(2, 5)}`,
+        shortUrl: `https://f1y.li/${linkId}`,
         longUrl: inputUrl,
         isNew: true,
-      };
+        linkId
+      }
 
-      setLinks([newLink, ...links]);
-      setInputUrl('');
-      toast.success('Link shortened successfully!');
+      setLinks([newLink, ...links])
+      setShowAllLinks(false) // Collapse the list when adding new link
+
+      pubSub.publish('flyone-externa-short-links', JSON.stringify(newLink), ['flyone-external-short-links'])
+        .then(() => {
+          toast.success('Link shortened successfully!')
+          setInputUrl('')
+        })
+        .catch((error) => {
+          console.error('Error publishing message:', error)
+        })
+      
     } catch (err) {
-      // Show error message if URL is invalid
-      toast.error('Please enter a valid URL!');
+      toast.error('Please enter a valid URL!')
     }
-  };
+  }
 
   const handleCopy = async (url) => {
     try {
-      await navigator.clipboard.writeText(url);
-      toast.success('Copied to clipboard!');
+      await navigator.clipboard.writeText(url)
+      toast.success('Copied to clipboard!')
     } catch (err) {
-      toast.error('Failed to copy to clipboard');
+      toast.error('Failed to copy to clipboard')
     }
-  };
-
-  // Don't render anything until after hydration
-  if (!mounted) {
-    return null;
   }
+
+  if (!mounted) {
+    return null
+  }
+
+  const visibleLinks = showAllLinks ? links : links.slice(0, INITIAL_LINKS_COUNT)
+  const hasMoreLinks = links.length > INITIAL_LINKS_COUNT
 
   return (
     <div className="w-full max-w-2xl mx-auto mt-12 space-y-6">
@@ -76,9 +91,14 @@ export default function UrlShortener() {
             className="pr-24 h-14 text-lg shadow-sm border-2 focus-visible:ring-primary/20"
             value={inputUrl}
             onChange={(e) => setInputUrl(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleShorten()
+              }
+            }}
           />
           <Button
-            className="absolute right-1 transition-all"
+            className="absolute right-1 transition-all h-12"
             style={{
               backgroundColor: '#57d468',
               color: 'white',
@@ -92,7 +112,7 @@ export default function UrlShortener() {
       </motion.div>
 
       <AnimatePresence>
-        {links.map((link) => (
+        {visibleLinks.map((link, index) => (
           <motion.div
             key={link.shortUrl}
             initial={link.isNew ? { opacity: 0, y: 20, height: 0 } : { opacity: 1 }}
@@ -156,8 +176,27 @@ export default function UrlShortener() {
             </Card>
           </motion.div>
         ))}
+
+        {hasMoreLinks && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="text-center"
+          >
+            <Button
+              variant="ghost"
+              className="text-muted-foreground hover:text-primary"
+              onClick={() => setShowAllLinks(!showAllLinks)}
+            >
+              {showAllLinks ? 'Show Less' : 'Show More'}
+              <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${showAllLinks ? 'rotate-180' : ''}`} />
+            </Button>
+          </motion.div>
+        )}
       </AnimatePresence>
       <Toaster richColors />
     </div>
-  );
+  )
 }
+
