@@ -45,6 +45,10 @@ const Navbar = () => {
                             }
                         </ul>
                         <div className="gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
+                        <NavLink href="https://docs.f1y.pro" className="flex items-center justify-center gap-x-1 text-sm text-white font-medium  border border-gray-500 active:bg-gray-900 md:inline-flex">
+                               Docs
+                               
+                            </NavLink>
                            
                             <NavLink href="https://app.f1y.pro" className="flex items-center justify-center gap-x-1 text-sm text-white font-medium custom-btn-bg border border-gray-500 active:bg-gray-900 md:inline-flex">
                                 Start now
