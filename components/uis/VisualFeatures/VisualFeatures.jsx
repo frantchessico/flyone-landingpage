@@ -25,7 +25,7 @@ const VisualFeatures = () => {
 
     return (
         <SectionWrapper>
-            <div className="custom-screen text-gray-300">
+            <div className="custom-screen text-gray-300 bg-[#030303]">
                 {/* Header Section */}
                 <div className="max-w-xl mx-auto text-center">
                     <h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">
@@ -37,7 +37,7 @@ const VisualFeatures = () => {
                 </div>
 
                 {/* Features Section */}
-                <div className="mt-12">
+                <div className="mt-12 bg-[#030303]">
                     <ul className="space-y-8 gap-x-6 sm:flex sm:space-y-0">
                         {features.map((item, idx) => (
                             <li

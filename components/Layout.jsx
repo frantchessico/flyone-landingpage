@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "./uis/Footer";
 import Navbar from "./uis/Navbar";
 
+
 const Layout = ({ children }) => {
     return (
         <>
@@ -33,7 +34,7 @@ const Layout = ({ children }) => {
                 <link rel="canonical" href="https://www.flyone.io/" />
             </Head>
             <Navbar />
-            <main>{children}</main>
+            <main className="min-h-screen bg-[#030303] from-gray-900 to-gray-800 text-gray-100">{children}</main>
             <Footer />
         </>
     );

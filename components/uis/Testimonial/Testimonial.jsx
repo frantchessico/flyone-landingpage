@@ -33,20 +33,7 @@ const Testimonial = () => {
       quote:
         "Since we started using Flyone, we’ve seen a significant increase in engagement and campaign reach.",
     },
-    // {
-    //   avatar: user4,
-    //   name: "Braimo Selemane",
-    //   title: "CTO of Waza Cursos",
-    //   quote:
-    //     "Flyone’s personalization tools and real-time analytics are amazing. I highly recommend it for any business looking to professionalize their marketing.",
-    // },
-    // {
-    //   avatar: user5,
-    //   name: "Elina Tsovo",
-    //   title: "Developer at Genesis Bank",
-    //   quote:
-    //     "The automation and user-friendly interface of Flyone have impressed me. It’s the best investment for any marketing professional.",
-    // },
+    
     {
       avatar: user6,
       name: "Cardoso Jr",
