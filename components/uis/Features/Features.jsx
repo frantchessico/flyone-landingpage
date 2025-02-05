@@ -5,43 +5,37 @@ import {  LinkIcon, ChartLine, Globe, FlaskConical, Target , Send} from 'lucide-
 const Features = () => {
     const featuresList = [
         {
-            icon:
-            <LinkIcon />,
-            title: "Advanced Link Management",
-            desc: "Create and manage thousands of links with ease and precision, tailored for your campaigns."
+            icon: <LinkIcon />,
+            title: "Gerenciamento Avançado de Links",
+            desc: "Crie e gerencie milhares de links com facilidade e precisão, feitos sob medida para suas campanhas."
         },
         {
-            icon:
-            <ChartLine />,
-            title: "Detailed Analytics",
-            desc: "Track link performance with real-time insights, including clicks, locations, and devices."
+            icon: <ChartLine />,
+            title: "Análises Detalhadas",
+            desc: "Acompanhe o desempenho dos links com insights em tempo real, incluindo cliques, localizações e dispositivos."
         },
         {
-            icon:
-            <Globe />,
-            title: "Custom Domains",
-            desc: "Enhance your branding with personalized domains for your short links."
+            icon: <Globe />,
+            title: "Domínios Personalizados",
+            desc: "Melhore seu branding com domínios personalizados para seus links curtos."
         },
         {
-            icon:
-            <Target />,
-            title: "Advanced Segmentation",
-            desc: "Organize and target audiences with unlimited segments for effective campaigns."
+            icon: <Target />,
+            title: "Segmentação Avançada",
+            desc: "Organize e segmente seu público com segmentos ilimitados para campanhas mais eficazes."
         },
         {
-            icon:
-            <FlaskConical />,
-            title: "Scalable API Access",
-            desc: "Integrate Flyone with your tools using our robust API, supporting up to 30,000 requests per month."
+            icon: <FlaskConical />,
+            title: "Acesso API Escalável",
+            desc: "Integre o Flyone às suas ferramentas usando nossa API robusta, suportando até 30.000 requisições por mês."
         },
         {
-            icon:
-            <Send />,
-            title: "Email Reports",
-            desc: "Receive automated performance reports directly in your inbox for better decision-making."
+            icon: <Send />,
+            title: "Relatórios por E-mail",
+            desc: "Receba relatórios automáticos de desempenho diretamente na sua caixa de entrada para tomar decisões mais assertivas."
         },
     ];
-
+    
     return (
         <SectionWrapper>
             <div id="features" className="custom-screen text-gray-300">
@@ -54,10 +48,10 @@ const Features = () => {
                 >
                     <div className="max-w-xl mx-auto text-center">
                         <h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">
-                            Supercharge Your Marketing with Flyone
+                        Potencialize seu marketing com o Flyone!
                         </h2>
                         <p className="mt-3">
-                            Flyone provides cutting-edge tools to optimize your marketing campaigns and improve your results.
+                        O Flyone oferece ferramentas de ponta para otimizar suas campanhas de marketing e melhorar seus resultados. 
                         </p>
                     </div>
                 </LayoutEffect>

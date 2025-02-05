@@ -3,28 +3,28 @@ import SectionWrapper from "@/components/SectionWrapper";
 
 const faqsList = [
     {
-        q: "What is Flyone?",
-        a: "Flyone is an advanced link management platform that helps you shorten, track, and analyze your links to optimize your marketing campaigns and drive results.",
+        q: "O que é o Flyone?",
+        a: "O Flyone é uma plataforma avançada de gerenciamento de links que ajuda a encurtar, rastrear e analisar seus links para otimizar suas campanhas de marketing e gerar resultados.",
     },
     {
-        q: "How does Flyone's link analytics work?",
-        a: "Flyone provides real-time insights into link performance, including clicks, geographic location, devices, and more, allowing you to refine your strategies effectively.",
+        q: "Como funcionam as análises de links do Flyone?",
+        a: "O Flyone oferece insights em tempo real sobre o desempenho dos links, incluindo cliques, localização geográfica, dispositivos e muito mais, permitindo refinar suas estratégias de forma eficaz.",
     },
     {
-        q: "Can I use custom domains with Flyone?",
-        a: "Yes! Flyone supports custom domains, allowing you to create branded short links that align with your business identity.",
+        q: "Posso usar domínios personalizados com o Flyone?",
+        a: "Sim! O Flyone suporta domínios personalizados, permitindo criar links curtos com a sua marca, alinhados à identidade do seu negócio.",
     },
     {
-        q: "Does Flyone offer team collaboration features?",
-        a: "Absolutely! Flyone allows multiple users to collaborate on campaigns, making it an ideal solution for marketing teams.",
+        q: "O Flyone oferece recursos de colaboração em equipe?",
+        a: "Com certeza! O Flyone permite que múltiplos usuários colaborem em campanhas, tornando-se uma solução ideal para equipes de marketing.",
     },
     {
-        q: "What makes Flyone different from other link shorteners?",
-        a: "Flyone combines advanced analytics, unlimited segmentation, and custom branding to provide a comprehensive solution for marketers who want more control and insights.",
+        q: "O que faz o Flyone ser diferente de outros encurtadores de links?",
+        a: "O Flyone combina análises avançadas, segmentação ilimitada e branding personalizado para fornecer uma solução completa para profissionais de marketing que buscam mais controle e insights.",
     },
     {
-        q: "Is Flyone suitable for businesses of all sizes?",
-        a: "Yes! Flyone is designed to support individual marketers, small businesses, and enterprises, with scalable plans tailored to your needs.",
+        q: "O Flyone é adequado para negócios de todos os tamanhos?",
+        a: "Sim! O Flyone é projetado para atender desde profissionais de marketing individuais até pequenas empresas e grandes corporações, com planos escaláveis adaptados às suas necessidades.",
     },
 ];
 
@@ -33,10 +33,10 @@ const FAQs = () => (
         <div className="custom-screen text-gray-300">
             <div className="max-w-xl text-center xl:mx-auto">
                 <h2 className="text-gray-50 text-3xl font-extrabold sm:text-4xl">
-                    Everything You Need to Know About Flyone
+                Tudo o que você precisa saber sobre o Flyone!
                 </h2>
                 <p className="mt-3">
-                    Here are answers to some of the most common questions about our platform.
+                Aqui estão as respostas para algumas das perguntas mais comuns sobre nossa plataforma.
                 </p>
             </div>
             <div className="mt-12">

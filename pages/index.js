@@ -6,11 +6,13 @@ import CTA from "@/components/uis/CTA";
 import Testimonial from "@/components/uis/Testimonial";
 import Pricing from "@/components/uis/Pricing";
 import FAQs from "@/components/uis/FAQs";
+import Bio from "@/components/uis/Bio";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Bio/>
       <Analytics />
       <VisualFeatures />
       <Features />

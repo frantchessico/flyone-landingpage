@@ -48,24 +48,24 @@ export default function UrlShortener() {
 
       pubSub.publish('flyone-externa-short-links', JSON.stringify(newLink), ['flyone-external-short-links'])
         .then(() => {
-          toast.success('Link shortened successfully!')
+          toast.success('Link encurtado com sucesso! 🎉')
           setInputUrl('')
         })
         .catch((error) => {
-          console.error('Error publishing message:', error)
+          toast.error('houve um erro durante o processo!')
         })
       
     } catch (err) {
-      toast.error('Please enter a valid URL!')
+      toast.error('Por favor, insira uma URL válida!')
     }
   }
 
   const handleCopy = async (url) => {
     try {
       await navigator.clipboard.writeText(url)
-      toast.success('Copied to clipboard!')
+      toast.success('Copiado para a área de transferência!')
     } catch (err) {
-      toast.error('Failed to copy to clipboard')
+      toast.error('Falha ao copiar para a área de transferência. Tente novamente!')
     }
   }
 
@@ -87,7 +87,7 @@ export default function UrlShortener() {
         <div className="relative flex items-center">
           <Input
             type="url"
-            placeholder="Shorten any link..."
+            placeholder="Encurte qualquer link..."
             className="pr-24 h-14 text-lg shadow-sm border-2 focus-visible:ring-primary/20"
             value={inputUrl}
             onChange={(e) => setInputUrl(e.target.value)}
@@ -106,7 +106,7 @@ export default function UrlShortener() {
             onClick={handleShorten}
           >
             <ArrowDown className="mr-2 h-5 w-5" />
-            Shorten
+            Encurtar
           </Button>
         </div>
       </motion.div>
@@ -161,13 +161,13 @@ export default function UrlShortener() {
                   {link.isNew ? (
                     <div className="flex items-center gap-2 px-3 py-1.5 bg-green-500/10 rounded-full">
                       <div className="size-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-sm font-medium text-green-600">New</span>
+                      <span className="text-sm font-medium text-green-600">Novo</span>
                     </div>
                   ) : link.clicks !== undefined ? (
                     <div className="flex items-center gap-2 px-3 py-1.5 bg-accent rounded-full">
                       <div className="size-2 bg-primary/60 rounded-full" />
                       <span className="text-sm font-medium">
-                        {link.clicks.toLocaleString()} clicks
+                        {link.clicks.toLocaleString()} cliques
                       </span>
                     </div>
                   ) : null}

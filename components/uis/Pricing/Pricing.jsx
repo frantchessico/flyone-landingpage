@@ -41,7 +41,7 @@ const Pricing = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-            Find a plan to power your business
+          Encontre um plano para impulsionar o seu negócio
           </h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
@@ -59,7 +59,7 @@ const Pricing = () => {
             >
               {plan.isPopular && (
                 <span className="px-3 py-1 text-sm text-green-600 font-semibold bg-green-100 rounded-full self-start">
-                  Most Popular
+                  Mais Popular
                 </span>
               )}
               <div className="mb-4">
@@ -118,7 +118,7 @@ const Pricing = () => {
 
                 onClick={handleGetstarted}
               >
-                Get Started
+                Comece agora
               </button>
             </div>
           ))}

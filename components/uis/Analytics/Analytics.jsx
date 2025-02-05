@@ -84,7 +84,7 @@ export default function Analytics() {
               value="clicks" 
               className="bg-white/5 backdrop-blur-sm rounded-lg p-6 data-[state=active]:bg-white/10 data-[state=active]:text-white h-auto flex flex-col items-start text-white border border-white/10"
             >
-              <span className="text-sm opacity-70">Clicks</span>
+              <span className="text-sm opacity-70">Cliques</span>
               <span className="text-3xl font-semibold mt-1">5,030</span>
             </TabsTrigger>
             <TabsTrigger 

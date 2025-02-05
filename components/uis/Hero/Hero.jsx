@@ -147,7 +147,7 @@ const Hero = () => {
                     "linear-gradient(179.1deg, #FFFFFF 0.77%, rgba(255, 255, 255, 0) 182.09%)",
             }}
           >
-            Superpowers for Your Marketing with Smart, Custom Links
+            Superpoderes para o seu marketing com links inteligentes e personalizados
           </motion.h1>
 
 
@@ -158,8 +158,7 @@ const Hero = () => {
             animate="visible"
             className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto"
           >
-            Flyone gives you smart link management, powerful analytics, and effortless tracking to boost your marketing
-            results.
+           O Flyone oferece gestão inteligente de links, análises poderosas e rastreamento fácil para impulsionar seus resultados de marketing.
           </motion.p>
 
           <motion.div custom={3} variants={fadeUpVariants} initial="hidden" animate="visible">
@@ -174,7 +173,7 @@ const Hero = () => {
               onMouseDown={(e) => (e.target.style.backgroundColor = "#3e9f4d")}
               onMouseUp={(e) => (e.target.style.backgroundColor = "#57d468")}
             >
-              Get Started
+             Comece agora
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 ml-2">
                 <path
                   fillRule="evenodd"

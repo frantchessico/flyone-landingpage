@@ -15,40 +15,40 @@ const Testimonial = () => {
     {
       avatar: user1,
       name: "Francisco Inoque",
-      title: "CEO of SavanaPoint",
+      title: "CEO da SavanaPoint",
       quote:
-        "Flyone has completely changed the way we manage our campaigns. The advanced features and detailed reports help us achieve our goals effortlessly.",
+        "O Flyone mudou completamente a forma como gerenciamos nossas campanhas. As funcionalidades avançadas e os relatórios detalhados nos ajudam a atingir nossos objetivos com facilidade.",
     },
     {
       avatar: user2,
       name: "Gamito Fumane",
-      title: "CEO of Fumane Films",
+      title: "CEO da Fumane Films",
       quote:
-        "With Flyone, we’ve simplified our digital marketing process. It’s intuitive and very effective for managing links and analyzing results.",
+        "Com o Flyone, simplificamos nosso processo de marketing digital. É intuitivo e muito eficaz para gerenciar links e analisar resultados.",
     },
     {
       avatar: user3,
       name: "Gonçalo Mazana",
-      title: "CEO of Pro Mídia",
+      title: "CEO da Pro Mídia",
       quote:
-        "Since we started using Flyone, we’ve seen a significant increase in engagement and campaign reach.",
+        "Desde que começamos a usar o Flyone, vimos um aumento significativo no engajamento e no alcance das campanhas.",
     },
-    
     {
       avatar: user6,
       name: "Cardoso Jr",
-      title: "Content Creator",
+      title: "Criador de Conteúdo",
       quote:
-        "Flyone is the perfect solution for content creators. The detailed insights and link management make my work much more efficient.",
+        "O Flyone é a solução perfeita para criadores de conteúdo. As análises detalhadas e o gerenciamento de links tornam meu trabalho muito mais eficiente.",
     },
-  ];
+];
+
 
   return (
     <SectionWrapper>
       <div id="testimonials" className="custom-screen text-gray-300">
         <div className="max-w-2xl text-center md:mx-auto">
           <h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">
-            Flyone is loved by innovators and leaders worldwide
+          O Flyone é amado por inovadores.
           </h2>
         </div>
         <GradientWrapper

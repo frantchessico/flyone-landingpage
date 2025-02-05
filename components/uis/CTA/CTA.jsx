@@ -18,10 +18,10 @@ const CTA = () => (
                     <div className="relative z-10">
                         <div className="max-w-xl mx-auto text-center">
                             <h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">
-                                Transform Your Marketing with Flyone
+                            Transforme seu marketing com o Flyone
                             </h2>
                             <p className="mt-5 text-gray-300">
-                                Flyone empowers your business with advanced link management, real-time analytics, and personalized branding tools to boost your campaigns and drive results.
+                            O Flyone potencializa o seu negócio com gerenciamento avançado de links, análises em tempo real e ferramentas de branding personalizadas para impulsionar suas campanhas e gerar resultados.
                             </p>
                         </div>
                         <div className="mt-5 flex justify-center font-medium text-sm">
@@ -44,7 +44,7 @@ const CTA = () => (
                                     (e.target.style.backgroundColor = "#57d468")
                                 }
                             >
-                                Get Started Now
+                                Comece agora mesmo!
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20"

@@ -7,32 +7,32 @@ import Image from "next/image";
 const VisualFeatures = () => {
     const features = [
         {
-            title: "Advanced Link Management",
-            desc: "Organize your campaigns with powerful tools to create and manage thousands of links effortlessly.",
+            title: "Gerenciamento Avançado de Links",
+            desc: "Organize suas campanhas com ferramentas poderosas para criar e gerenciar milhares de links sem esforço.",
             img: Feature1,
         },
         {
-            title: "Real-Time Analytics",
-            desc: "Track your link performance instantly with detailed insights into clicks, user behavior, and more.",
+            title: "Análises em Tempo Real",
+            desc: "Acompanhe o desempenho dos seus links instantaneamente com insights detalhados sobre cliques, comportamento do usuário e mais.",
             img: Feature2,
         },
         {
-            title: "Custom Branding",
-            desc: "Elevate your marketing with personalized domains and branded short links tailored to your business.",
+            title: "Branding Personalizado",
+            desc: "Eleve seu marketing com domínios personalizados e links curtos com sua marca, feitos sob medida para o seu negócio.",
             img: Feature3,
         },
     ];
-
+    
     return (
         <SectionWrapper>
             <div className="custom-screen text-gray-300 bg-[#030303]">
                 {/* Header Section */}
                 <div className="max-w-xl mx-auto text-center">
                     <h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">
-                        Unlock the Full Potential of Your Marketing with Flyone
+                    Desbloqueie todo o potencial do seu marketing com o Flyone!
                     </h2>
                     <p className="mt-3">
-                        Flyone provides advanced solutions to manage links, track results, and build your brand—all in one platform.
+                    O Flyone oferece soluções avançadas para gerenciar links e acompanhar resultados—tudo em uma única plataforma.
                     </p>
                 </div>
 
