@@ -1,14 +1,70 @@
-import { Instagram, Mail } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { Instagram, Mail, Send } from "lucide-react"
+import { toast, Toaster } from "sonner"
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear() // Obter o ano atual dinamicamente
+  const currentYear = new Date().getFullYear()
+  const [email, setEmail] = useState("")
+  const [acceptUpdates, setAcceptUpdates] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (email && acceptUpdates) {
+      // Aqui você normalmente enviaria o email para seu backend
+      console.log("Inscrevendo:", email)
+      toast.success("Inscrição realizada com sucesso!")
+      setEmail("")
+      setAcceptUpdates(false)
+    } else if (!email) {
+      toast.error("Por favor, insira um email válido.")
+    } else {
+      toast.error("Por favor, aceite receber as atualizações.")
+    }
+  }
 
   return (
-    <footer className="mt-20">
-      <div className="custom-screen">
-        <div className="mt-10 py-8 border-t border-gray-800 items-center justify-between sm:flex">
-          <p className="text-gray-400 text-center">© {currentYear} Flyone. All rights reserved.</p>
-          <div className="flex items-center justify-center gap-x-6 text-gray-500 mt-6 sm:mt-0">
+    <footer className="bg-gray-900 text-white py-8">
+      <div className="container mx-auto px-4">
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-4">Fique por dentro das novidades</h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Seu email"
+                className="flex-grow p-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                className="bg-blue-600 p-2 rounded-md hover:bg-blue-700 transition duration-300 flex items-center justify-center whitespace-nowrap"
+              >
+                <Send className="w-5 h-5 mr-2" />
+                <span>Inscrever</span>
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                id="acceptUpdates"
+                checked={acceptUpdates}
+                onChange={(e) => setAcceptUpdates(e.target.checked)}
+                className="rounded text-blue-600 focus:ring-blue-500"
+              />
+              <label htmlFor="acceptUpdates" className="text-sm text-gray-300">
+                Aceito receber novidades sobre atualizações
+              </label>
+            </div>
+          </form>
+        </div>
+        <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-gray-400 text-center sm:text-left mb-4 sm:mb-0">
+            © {currentYear} Flyone. All rights reserved.
+          </p>
+          <div className="flex items-center gap-x-6 text-gray-400">
             <a href="https://f1y.li/wrt4suh" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
               <Instagram className="w-6 h-6 hover:text-gray-200 duration-150" />
             </a>
