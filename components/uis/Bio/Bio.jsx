@@ -10,7 +10,7 @@ export default function ShareSection() {
           {/* Left content */}
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-200 leading-tight">
-            Compartilhe seu Linktree na bio do Instagram, TikTok, Twitter e outras plataformas.
+            Compartilhe seu Flyone na bio do Instagram, TikTok, Twitter e outras plataformas.
             </h2>
             <p className="text-pink-100 text-lg md:text-xl max-w-2xl">
             Adicione seu link exclusivo do Flyone em todas as plataformas e lugares onde seu público está. Depois, use seu QR code para transformar seu tráfego offline em online.
